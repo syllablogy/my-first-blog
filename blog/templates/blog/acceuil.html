@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html><!-- por acceder au squelette, la structure de html, en premiere ligne on clique sur html+ctrl+ espace-->
+<html>
+<!--<head>
+	<title> Mon premier blog en code </title>
+	<link rel="stylesheet" type="text/css" href="{%static 'blog/css/bootstrap.min.css'%}">
+	<style>
+		h1{color: red;}
+		p{background-color: blue;}
+    </style>
+</head>
+<body>
+	<h1 class="text-center alert alert-primary"> Bienvenu sur mon blog</h1>-->
+<!--	<p class="button button-success">je suis à DjangoGirls ABIDJAN à ASSOYA Marcory PMI</p>-->
+<!--<button class="btn btn-danger">cliquez</button>
+</body>-->
+<head>
+	<title>Django girls blog </title>
+	<link rel="stylesheet" type="text/css" href="{%static 'blog/css/bootstrap.min.css'%}">
+</head>
+<body>
+	<div class="container-fluid text-center">
+            <h1 class="alert alert-primary "><a href="">Django Girls Blog</a></h1>
+
+        </div>
+
+       
+        <div class="container">
+           {% for post in tous_les_postes %}
+           <div>
+              
+              <h1 style="color:red">{{post.title}} </h1>
+              <h6 class="text-right" style="color:purple; font-style: italic"> publié le {{post.published_date}}</h6><br>
+             <p class="text-justify"> {{post.text}} </p><br>
+           </div> 
+              {%endfor%}
+        </div>     
+           
+
+
+         </div>
+</body>
+</html>
